@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../images/logo.png';
 import "./Navbar.css";
 import { FaLinkedinIn, FaMediumM, FaGithub } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [showMediaIcons, setShowMediaIcons] = useState(false);
 
     return (
@@ -13,9 +15,9 @@ const Navbar = () => {
             <nav className="main-nav">
                 {/* #1 logo section */}
                 <div className="logo">
-                    <h2>
-                        RK.
-                    </h2>
+                    <Link to="/">
+                        <img src={logo} className="logo-img"/>
+                    </Link>
                 </div>
 
                 {/* #2 Menu section */}
@@ -24,16 +26,16 @@ const Navbar = () => {
                 }>
                     <ul>
                         <li>
-                            <a href="#">Home</a>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <a href="#">About</a>
+                            <Link to="/about">About</Link>
                         </li>
                         <li>
-                            <a href="#">Projects</a>
+                            <Link to="/projects">Projects</Link>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <Link to="/contact">Contact</Link>
                         </li>
                     </ul>
                 </div>
@@ -42,19 +44,20 @@ const Navbar = () => {
                 <div className="social-media">
                     <ul className="social-media-desktop">
                         <li>
-                            <a className="linkedin" href="https://www.linkedin.com/in/rahimakhanam" target="_rahi"><FaLinkedinIn size={30} /></a>
+                            <Link className="linkedin" to="https://www.linkedin.com/in/rahimakhanam" target="_rahi"><FaLinkedinIn size={30} /></Link>
+
                         </li>
                         <li>
-                            <a className="github" href="https://github.com/RahimaKhanam" target="_rahm"><FaGithub  size={30} /></a>
+                            <Link className="github" to="https://github.com/RahimaKhanam" target="_rahm"><FaGithub size={30} /></Link>
                         </li>
                         <li>
-                            <a className="medium" href="https://medium.com/@rahimakhanam" target="_rahim"><FaMediumM  size={30}/></a>
+                            <Link className="medium" to="https://medium.com/@rahimakhanam" target="_rahim"><FaMediumM size={30} /></Link>
                         </li>
                     </ul>
 
                     {/* Hamburger menu */}
                     <div className="hamburger-menu" onClick={() => setShowMediaIcons(!showMediaIcons)}>
-                        <a href="#"><GiHamburgerMenu size={30} color={'white'} /></a>
+                        &nbsp;&nbsp;&nbsp;<Link to="/"><GiHamburgerMenu size={30} color={'white'} /></Link>
                     </div>
                 </div>
             </nav>
@@ -69,3 +72,5 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+
