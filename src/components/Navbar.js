@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 import "./Navbar.css";
-import { FaLinkedinIn, FaMediumM, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaMediumM, FaGithub } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
@@ -15,7 +15,7 @@ const Navbar = (props) => {
             <nav className="main-nav">
                 {/* #1 logo section */}
                 <div className="logo">
-                    <Link to="/">
+                    <Link to="/" alt="logo_image">
                         <img src={logo} className="logo-img"/>
                     </Link>
                 </div>
@@ -44,7 +44,7 @@ const Navbar = (props) => {
                 <div className="social-media">
                     <ul className="social-media-desktop">
                         <li>
-                            <Link className="linkedin" to="https://www.linkedin.com/in/rahimakhanam" target="_rahi"><FaLinkedinIn size={30} /></Link>
+                            <Link className="linkedin" to="https://www.linkedin.com/in/rahimakhanam" target="_rahi"><FaLinkedin size={30} /></Link>
 
                         </li>
                         <li>

@@ -83,6 +83,7 @@ li {
 
 .social-media {
   grid-column: 4/5;
+  height: 10rem;
 }
 
 .social-media ul {
@@ -278,7 +279,7 @@ li {
   }
 }
 
-@media (max-width: 442px) {
+@media (max-width: 425px) {
   .main-nav {
     height: 6rem;
     grid-template-columns: 2rem 1fr 2fr 2rem;
@@ -288,14 +289,8 @@ li {
     height: 5rem;
   }
 
-  .logo,
   .social-media ul {
-    
     height: 6rem;
-  }
-
-  .logo h2 {
-    font-size: 1rem;
   }
 
   .social-media {
@@ -315,5 +310,37 @@ li {
 
   .hero-section h1 {
     font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 352px) {
+  .main-nav {
+    height: 5rem;
+    grid-template-columns: 1rem 1fr 2fr 1rem;
+  }
+
+  .logo-img {
+    height: 4rem;
+    margin-top: -5%;
+    vertical-align: middle;
+  }
+
+  .social-media ul {
+    height: 3rem;
+  }
+
+  .social-media {
+    /* grid-column: 3/4; */
+    height: 5rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .social-media .hamburger-menu {
+    display: block;
+    font-size: 3rem;
+    margin-top: -15%;
+    text-align: center;
   }
 }
